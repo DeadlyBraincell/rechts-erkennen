@@ -1,0 +1,51 @@
+<!-- Nur der Seiteninhalt, nicht direkt öffnen. build.py macht daraus die fertige Seite in website/ -->
+<div class="wrap page-head">
+  <p class="label">Kartei · Erkennen</p>
+  <h1>Symbole &amp; Codes</h1>
+  <p class="lede">Von verbotenen NS-Zeichen über Zahlencodes und Modemarken bis zu Emojis und Hashtags der Neuen Rechten. Tippe auf eine Karte für Details und Quelle.</p>
+  <div class="legend">
+    <span class="status st-strafbar">strafbar</span> Zeigen ist verboten (§ 86a StGB / verbotene Organisation)
+    <span class="status st-kontext">kontextabhängig</span> je nach Zusammenhang strafbar
+    <span class="status st-frei">nicht strafbar</span> legal, aber ein Erkennungszeichen
+  </div>
+</div>
+
+<section class="block"><div class="wrap">
+  <div class="filters">
+    <input id="symq" type="search" placeholder="Suchen: Zahl, Name, Emoji, Begriff …" aria-label="Kartei durchsuchen" autocomplete="off">
+    <div class="row"><span class="label">Kategorie</span><div class="chips" id="catchips"></div></div>
+    <div class="row"><span class="label">Strafbarkeit</span>
+      <div class="chips" id="stchips">
+        <button class="chip" data-st="all" aria-pressed="true">Alle</button>
+        <button class="chip" data-st="strafbar" aria-pressed="false">strafbar</button>
+        <button class="chip" data-st="kontext" aria-pressed="false">kontextabhängig</button>
+        <button class="chip" data-st="frei" aria-pressed="false">nicht strafbar</button>
+      </div>
+    </div>
+    <span class="symcount" id="symcount" aria-live="polite"></span>
+  </div>
+  <div class="symgrid" id="symgrid"></div>
+  <p class="small" style="margin-top:1.25rem">Karten mit Schraffur zeigen Bildsymbole. Wir bilden sie hier bewusst nicht nach; Abbildungen findest du bei <a href="https://nina-nrw.de/codes-und-symbole/" target="_blank" rel="noopener">NinA NRW</a>. Die Ampel ist unsere vereinfachte Einordnung; NinA weist darauf hin, dass sich die Rechtsprechung ändern kann (Stand der NinA-Übersicht: November 2024).</p>
+</div></section>
+
+<section class="block"><div class="wrap two">
+  <div class="stack">
+    <h2 class="h2">Warum Codes?</h2>
+    <p>Viele NS-Symbole sind verboten. Die Szene weicht deshalb auf Ersatz aus: Zahlen statt Buchstaben (88 statt HH), Blitz-Emojis statt SS-Runen, Modemarken mit verstecktem „NSDAP“ im Namen.</p>
+    <p>Die Neue Rechte geht noch weiter. Gruppen wie Lukreta meiden klassische Neonazi-Codes fast ganz. Ihr Code ist der Euphemismus: ein Wort wie „Remigration“ klingt für Außenstehende harmlos und ist für Eingeweihte eindeutig.</p>
+    <p class="note"><strong>Wichtig:</strong> Kein einzelnes Zeichen beweist etwas. 18 kann ein Alter sein, 👌 heißt meistens „okay“, Thors Hammer trägt auch die Metal-Szene. Eindeutig wird es erst durch ein Muster aus mehreren Hinweisen und das Umfeld: wem ein Account folgt, wen er markiert, was er teilt.</p>
+    <div class="srcs"><span>Quellen:</span><a href="https://www.amadeu-antonio-stiftung.de/wp-content/uploads/2024/06/Echte-Maenner-Netz1.pdf" target="_blank" rel="noopener">Amadeu Antonio Stiftung 2024</a><a href="https://nrw.edumaps.de/file/3358707013883944083.pdf/1s8t67h" target="_blank" rel="noopener">Social-Media-Scouts-Workshop</a><a href="https://www.bpb.de/mediathek/reihen/werkstatt-reels/569232/werkstatt-recherchiert-emoji-codes-entschluesseln/" target="_blank" rel="noopener">bpb</a></div>
+  </div>
+  <div class="stack">
+    <h2 class="h2">Teste dich</h2>
+    <p class="sub" style="margin:0">Sechs zufällige Codes. Erkennst du, wofür sie stehen?</p>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<dialog class="symdlg" id="symdlg" aria-label="Details zum Symbol">
+  <div class="dlg-in">
+    <button class="btn ghost dlg-close" type="button" data-close>Schließen</button>
+    <div class="dlg-body"></div>
+  </div>
+</dialog>
